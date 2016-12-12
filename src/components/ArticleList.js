@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ArticleList = props => {
+const ArticleList = (props) => {
 	if (!props.articles) {
 		return <div className='article-preview'>Loading...</div>
 	}
