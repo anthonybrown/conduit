@@ -1,5 +1,3 @@
-'use strict';
-
 import _superagent from 'superagent'
 import superagentPromise from 'superagent-promise'
 
@@ -13,11 +11,13 @@ const requests = {
 	get: (url) =>
 		superagent
 			.get( `${API_ROOT}${url}` )
+			.use(tokenPlugin)
 			.then( responseBody ),
 
 	post: (url, body) =>
 		superagent
 			.post( `${API_ROOT}${url}`, body )
+			.use(tokenPlugin)
 			.then( responseBody )
 }
 
@@ -27,12 +27,23 @@ const Articles = {
 }
 
 const Auth = {
+	current: () =>
+		requests.get('/user'),
+
 	login: (email, password) => {
-		requests.post('/users/login', { user: { email, password } })
+		return requests.post('/users/login', { user: { email, password } })
+	}
+}
+
+let token = null
+let tokenPlugin = req => {
+	if (token) {
+		req.set('authorization', `Token ${token}`)
 	}
 }
 
 export default {
 	Articles,
-	Auth
+	Auth,
+	setToken: _token => { token = _token }
 }
