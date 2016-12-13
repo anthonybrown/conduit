@@ -1,3 +1,5 @@
+'use strict';
+
 import React from 'react'
 import ArticlePreview from './ArticlePreview'
 
@@ -16,9 +18,10 @@ const ArticleList = (props) => {
 
 	return (
 		<div>
-			{props.articles.map(article => {
+			{
+				props.articles.map(article => {
 				return (
-					<ArticlePreview article={article} />
+					<ArticlePreview article={article} key={article.slug} />
 				)})
 			}
 		</div>

@@ -7,7 +7,7 @@ const ArticlePreview = (props) => {
 		<div className='article-preview'>
 			<div className="article-meta">
 				<a>
-					<img src={article.author.image} alt={article.title} />
+					<img src={article.author.image} alt={article.author.username} />
 				</a>
 
 				<div className='info'>
@@ -27,7 +27,7 @@ const ArticlePreview = (props) => {
 				</div>
 			</div>
 
-			<a to={`article/${article.slug}`} className='preview'>
+			<a to={`article/${article.slug}`} className='preview-link'>
 				<h1>{article.title}</h1>
 				<p>{article.description}</p>
 				<span>Read more...</span>
@@ -35,8 +35,9 @@ const ArticlePreview = (props) => {
 					{
 						article.tagList.map((tag) => {
 							return (
-								<li className='tag-default tag-pill tag-outline'
-									kety={tag}>
+								<li
+									className='tag-default tag-pill tag-outline'
+									key={tag}>
 									{tag}
 								</li>
 							)
