@@ -1,11 +1,12 @@
+import { Provider }					from 'react-redux'
 import ReactDOM							from 'react-dom'
+import { Router, Route, IndexRoute, hashHistory } from 'react-router'
+import React, { Component }	from 'react'
+
 import App									from './components/App'
 import Home									from './components/Home'
 import Login								from './components/Login'
-import { Provider }					from 'react-redux'
-import React, { Component }	from 'react'
 import store								from './store'
-import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 
 ReactDOM.render((
 	<Provider store={store}>
