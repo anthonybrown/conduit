@@ -7,6 +7,7 @@ import Home   from './Home'
 
 const mapStateToProps = state => ({
 	appName: state.common.appName,
+	currentUser: state.common.currentUser,
 	redirectTo: state.common.redirectTo
 })
 
@@ -39,7 +40,10 @@ class App extends Component {
 	render() {
     return (
 		  <div>
-				<Header appName={this.props.appName} />
+				<Header
+					appName={this.props.appName}
+					currentUser={this.props.currentUser}
+				/>
 				{this.props.children}
 			</div>
     )

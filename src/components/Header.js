@@ -35,10 +35,15 @@ const LoggedInView = (props) => {
 	if (props.currentUser) {
 		return (
 			<ul className='nav navbar-nav pull-xs-right'>
+				<li className='nav-item'>
+					<Link to='/' className='nav-link'>
+						Home
+					</Link>
+				</li>
 
 				<li className='nav-item'>
 					<Link to='editor' className='nav-link'>
-						<i className='ion-gear-a'></i>&nbsp;New Post
+						<i className='ion-compose'></i>&nbsp;New Post
 					</Link>
 				</li>
 
@@ -48,10 +53,23 @@ const LoggedInView = (props) => {
 					</Link>
 				</li>
 
-
+				<li className='nav-item'>
+					<Link
+						to={`@${props.currentUser.username}`}
+						className='nav-link'>
+						<img
+							className='user-pic'
+							src={props.currentUser.image}
+							alt='user image'
+						/>
+						{props.currentUser.username}
+					</Link>
+				</li>
 			</ul>
 		)
 	}
+
+	return null
 }
 
 class Header extends Component {
@@ -62,18 +80,9 @@ class Header extends Component {
 					<Link to='/' className='navbar-brand'>
 						{this.props.appName.toLowerCase()}
 					</Link>
-					<ul className='nav navbar-nav pull-xs-right'>
-						<li className="nav-item">
-							<Link to='/' className='nav-link'>
-								Home
-							</Link>
-						</li>
-						<li className="nav-item">
-							<Link to='login' className='nav-link'>
-								Sign in
-							</Link>
-						</li>
-					</ul>
+
+					<LoggedOutView currentUser={this.props.currentUser} />
+					<LoggedInView currentUser={this.props.currentUser} />
 				</div>
 			</nav>
 		)
