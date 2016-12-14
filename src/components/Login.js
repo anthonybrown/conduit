@@ -1,35 +1,37 @@
-import { Link } from 'react-router';
-import ListErrors from './ListErrors';
-import React,{ Component } from 'react';
-import agent from '../agent';
-import { connect } from 'react-redux';
+import { Link } from 'react-router'
+import ListErrors from './ListErrors'
+import React,{ Component } from 'react'
+import agent from '../agent'
+import { connect } from 'react-redux'
 
-const mapStateToProps = state => ({ ...state.auth });
+const mapStateToProps = state => ({ ...state.auth })
 
 const mapDispatchToProps = dispatch => ({
   onChangeEmail: value =>
     dispatch({ type: 'UPDATE_FIELD_AUTH', key: 'email', value }),
-  onChangePassword: value =>
+
+	onChangePassword: value =>
     dispatch({ type: 'UPDATE_FIELD_AUTH', key: 'password', value }),
-  onSubmit: (email, password) =>
+
+	onSubmit: (email, password) =>
     dispatch({ type: 'LOGIN', payload: agent.Auth.login(email, password) })
-});
+})
 
 class Login extends Component {
   constructor() {
     super()
-    this.changeEmail		= e => this.props.onChangeEmail(e.target.value);
-    this.changePassword = e => this.props.onChangePassword(e.target.value);
+    this.changeEmail		= e => this.props.onChangeEmail(e.target.value)
+    this.changePassword = e => this.props.onChangePassword(e.target.value)
 
 		this.submitForm = (email, password) => e => {
-      e.preventDefault();
-      this.props.onSubmit(email, password);
-    };
+      e.preventDefault()
+      this.props.onSubmit(email, password)
+    }
   }
 
   render() {
-    const email		 = this.props.email;
-    const password = this.props.password;
+    const email		 = this.props.email
+    const password = this.props.password
     return (
       <div className='auth-page'>
         <div className='container page'>
@@ -80,8 +82,8 @@ class Login extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
