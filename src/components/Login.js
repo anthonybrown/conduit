@@ -1,8 +1,8 @@
-import { Link } from 'react-router'
-import ListErrors from './ListErrors'
 import React,{ Component } from 'react'
-import agent from '../agent'
-import { connect } from 'react-redux'
+import { Link }            from 'react-router'
+import { connect }         from 'react-redux'
+import ListErrors          from './ListErrors'
+import agent               from '../agent'
 
 const mapStateToProps = state => ({ ...state.auth })
 

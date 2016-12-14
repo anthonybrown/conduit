@@ -16,8 +16,10 @@ const mapDispatchToProps = dispatch => ({
 	onChangeUsername: value =>
 		dispatch({ type: 'UPDATE_FIELD_AUTH', key: 'username', value }),
 
-	onSubmit: (username, email, password) =>
-    dispatch({ type: 'REGISTER', payload: agent.Auth.register(username, email, password) })
+	onSubmit: (username, email, password) => {
+		const payload =  agent.Auth.register(username, email, password)
+		dispatch({ type: 'REGISTER', payload })
+	}
 })
 
 
@@ -45,7 +47,7 @@ class Register extends Component  {
 					<div className='row'>
 						<div className='col-md-6 offset-md-3 col-xs-12'>
 							<h1 className='text-xs-center'>Sign Up</h1>
-							<p>
+							<p className='text-xs-center'>
 								<Link to='login'>
 									Have an account?
 								</Link>
@@ -104,4 +106,4 @@ class Register extends Component  {
 	}
 }
 
-export default Register
+export default connect(mapStateToProps, mapDispatchToProps)(Register)

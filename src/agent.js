@@ -44,7 +44,7 @@ const Auth = {
 		requests.post('/users', { user: { username, email, password } }),
 
 	save: user =>
-		requests.put('/usr', { user })
+		requests.put('/users', { user })
 }
 
 
