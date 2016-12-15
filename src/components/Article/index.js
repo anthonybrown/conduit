@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Link }    from 'react-router'
-import agent       from '../../agent'
 import { connect } from 'react-redux'
 import marked      from 'marked'
+import agent       from '../../agent'
 
 const mapStateToProps = state => ({
   ...state.article,
@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch({ type: 'ARTICLE_PAGE_UNLOADED' })
 })
 
-class Article extends React.Component {
+class Article extends Component {
   componentWillMount() {
     this.props.onLoad(Promise.all([
       agent.Articles.get(this.props.params.id),
@@ -44,9 +44,9 @@ class Article extends React.Component {
           <div className='container'>
 
             <h1>{this.props.article.title}</h1>
-            <ArticleMeta
+						{/*<ArticleMeta
               article={this.props.article}
-              canModify={canModify} />
+							canModify={canModify} />*/}
 
           </div>
         </div>
@@ -81,12 +81,13 @@ class Article extends React.Component {
           </div>
 
           <div className='row'>
-            <CommentContainer
+						{/*<CommentContainer
                 comments={this.props.comments || []}
                 errors={this.props.commentErrors}
                 slug={this.props.params.id}
-                currentUser={this.props.currentUser} />
+								currentUser={this.props.currentUser} />*/}
           </div>
+
         </div>
       </div>
     )
