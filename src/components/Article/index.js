@@ -3,6 +3,7 @@ import { Link }    from 'react-router'
 import { connect } from 'react-redux'
 import marked      from 'marked'
 import agent       from '../../agent'
+import ArticleMeta from './ArticleMeta'
 
 const mapStateToProps = state => ({
   ...state.article,
@@ -44,9 +45,9 @@ class Article extends Component {
           <div className='container'>
 
             <h1>{this.props.article.title}</h1>
-						{/*<ArticleMeta
+						<ArticleMeta
               article={this.props.article}
-							canModify={canModify} />*/}
+							canModify={canModify} />
 
           </div>
         </div>
