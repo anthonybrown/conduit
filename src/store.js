@@ -1,5 +1,6 @@
 import {applyMiddleware,createStore, combineReducers} from 'redux'
 import { localStorageMiddleware, promiseMiddleware}	  from './middleware'
+import article  from './reducers/article'
 import auth			from './reducers/auth'
 import common		from './reducers/common'
 import home			from './reducers/home'
@@ -9,7 +10,8 @@ const reducer = combineReducers({
 	auth,
 	common,
 	home,
-	settings
+	settings,
+	article
 })
 
 const middleware = applyMiddleware(promiseMiddleware, localStorageMiddleware)

@@ -8,6 +8,7 @@ import Home									from './components/Home'
 import Login								from './components/Login'
 import Register							from './components/Register'
 import Settings							from './components/Settings'
+import Article							from './components/Article'
 import store								from './store'
 
 ReactDOM.render((
