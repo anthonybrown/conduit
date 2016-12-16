@@ -8,7 +8,6 @@ const mapDispatchToProps = (dispatch) => ({
 		dispatch({ type: 'DELETE_ARTICLE', payload })
 })
 
-
 const ArticleActions = (props) => {
 	const article = props.article
 	const del = () => {

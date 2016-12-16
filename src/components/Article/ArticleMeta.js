@@ -22,8 +22,7 @@ const ArticleMeta = (props) => {
 
 				<ArticleActions
 					canModify={props.canModify}
-					article={article}
-				/>
+					article={article} />
 			</div>
 		</div>
 	)

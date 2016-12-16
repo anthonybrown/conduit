@@ -46,9 +46,8 @@ const Articles = {
 	get: (slug) =>
 	requests.get(`/articles/${slug}`),
 
-	del: (slug) => {
+	del: (slug) =>
 		requests.del(`/articles/${slug}`)
-	}
 }
 
 const Auth = {
