@@ -9,4 +9,4 @@ Work in progress
 - [ ] update code to latest version
 - [ ] add travis cli
 
-
+https://travis-ci.org/anthonybrown/conduit.svg?branch=master
