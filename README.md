@@ -7,3 +7,6 @@ Work in progress
 - [ ] finish tutorial
 - [ ] create backend api
 - [ ] update code to latest version
+
+
+https://travis-ci.org/anthonybrown/conduit.svg?branch=master
