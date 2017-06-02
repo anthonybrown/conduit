@@ -7,6 +7,6 @@ Work in progress
 - [ ] finish tutorial
 - [ ] create backend api
 - [ ] update code to latest version
-- [ ] add travis cli
+- [x] add travis cli
 
 [![Build Status](https://travis-ci.org/anthonybrown/conduit.svg?branch=master)](https://travis-ci.org/anthonybrown/conduit)
