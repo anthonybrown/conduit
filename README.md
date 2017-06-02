@@ -9,4 +9,4 @@ Work in progress
 - [ ] update code to latest version
 - [ ] add travis cli
 
-https://travis-ci.org/anthonybrown/conduit.svg?branch=master
+[![Build Status](https://travis-ci.org/anthonybrown/conduit.svg?branch=master)](https://travis-ci.org/anthonybrown/conduit)
